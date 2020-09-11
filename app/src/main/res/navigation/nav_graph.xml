@@ -9,7 +9,7 @@
         android:id="@+id/FirstFragment"
         android:name="zw.co.technoextreme.gads2020leaderboard.FirstFragment"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        tools:layout="@layout/learning_leaders_fragment">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
@@ -19,7 +19,7 @@
         android:id="@+id/SecondFragment"
         android:name="zw.co.technoextreme.gads2020leaderboard.SecondFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        tools:layout="@layout/skilliq_leaders_fragment">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
