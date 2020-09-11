@@ -1,30 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".FirstFragment">
+    tools:context=".LearningLeadersFragment">
 
-    <TextView
-        android:id="@+id/leaderboard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Leaderboard"
-        android:textColor="#ffffff"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="28dp"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="16dp"/>
+    <LinearLayout
+        android:id="@+id/board"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/button_first"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/leaderboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="28dp"
+            android:layout_weight="1"
+            android:text="LEADERBOARD"
+            android:textColor="#ffffff"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="14dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded"
+            android:text="Submit"
+            android:textAllCaps="false"
+            app:layout_constraintStart_toEndOf="@id/leaderboard"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SUBMIT"
-        android:layout_marginTop="28dp"
-        android:layout_marginLeft="32dp"
-        app:layout_constraintStart_toEndOf="@id/leaderboard"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_below="@+id/board">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/learningButton"
+            android:background="@android:color/transparent"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:text="Learning Leaders"></Button>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/skillButton"
+            android:background="@android:color/transparent"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:text="Skill IQ Leaders"></Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttons">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</RelativeLayout>
